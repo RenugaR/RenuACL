@@ -1,0 +1,21 @@
+package JavaPrograms;
+
+public class WordbyWordSplit {
+
+	public static void main(String[] args) {
+		 String str = "Greens Technologies";
+	        String reversed = reverseString(str);
+	        System.out.println("The reversed string is: " + reversed);
+	    }
+
+	    public static String reverseString(String str)
+	    {
+	        if (str.isEmpty())
+	            return str;
+	        //Calling Function Recursively
+	        return reverseString(str.charAt(0) + str.substring(1));
+	    }
+
+	}
+
+}

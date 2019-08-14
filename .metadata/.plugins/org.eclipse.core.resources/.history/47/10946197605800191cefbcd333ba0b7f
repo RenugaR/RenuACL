@@ -1,0 +1,43 @@
+package org.Xpath;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class DropDown {
+
+	public static void main(String[] args) throws AWTException, InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\GreenTech\\SeleniumDay1\\drivers\\ChromeDriver.exe");			
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.flipkart.com/");
+		WebElement btnclose = driver.findElement(By.xpath("//button[text()='✕']"));
+		btnclose.click();
+		WebElement txtsearch = driver.findElement(By.name("q"));
+		txtsearch.sendKeys("iphone7");
+		WebElement search = driver.findElement(By.className("_2BhAHa"));
+		search.click();
+		Thread.sleep(5000);
+		WebElement fstphone = driver.findElement(By.xpath("//div[text()='Apple iPhone 7 (Rose Gold, 32 GB)']"));
+		fstphone.click();
+		String parwinid = driver.getWindowHandle();
+		Set<String> allWinid = driver.getWindowHandles();
+		for (String eachwinid : allWinid) {
+			if (!parwinid.equals(eachwinid)) {
+				driver.switchTo().window(eachwinid);
+			}	
+		}			
+		WebElement txtchild = driver.findElement(By.xpath("//button[@class='_2AkmmA _2Npkh4 _2MWPVK']"));
+		txtchild.click();
+		Thread.sleep(8000);
+		WebElement price = driver.findElement(By.className("pMSy0p XU9vZa"));
+		System.out.println(price.getText());
+	}
+
+}

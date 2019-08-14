@@ -1,0 +1,24 @@
+package org.javaprograms;
+
+public class NumbersString {
+
+	public static void main(String[] args) {
+		/*
+		 * String s="(10-6)=46"; String arrStr[] = s.split("=",2);
+		 * System.out.println(arrStr[1]);
+		 */
+	// I am Travelling
+		//gnillevarTamI
+		String s="I am Travelling";
+		String[] split = s.split(" ");
+		int length = split.length;
+		int wordlen = split[length-1].length();
+		System.out.println(wordlen);
+		for (int i = wordlen ; i != 0; i--) {
+			char c = split[length-1].charAt(i-1);
+			System.out.print(c);
+		}
+	}
+}
+
+

@@ -1,0 +1,29 @@
+package JavaPrograms;
+
+import java.util.Map;
+
+public class TwoTimesRepeat {
+		public String repeatAllTwice(String stng) 
+		{
+		  int l = stng.length();
+		  String newstring = "";
+		  {
+		  for (int i = 0; i < l; i++) 
+		  {
+			  for (int k = 0; k < i-1; k++) {
+				  if(i==k) {
+		    newstring += stng.substring(i,i+1) + stng.substring(i, i+1);
+				  }
+			 }
+		  } 
+		}
+		return newstring;
+	}
+		public static void main (String[] args)
+		    {
+		      TwoTimesRepeat t= new TwoTimesRepeat();
+		      String str1 =  "Greens Technologies";
+		      System.out.println("The given string is: "+str1);
+		      System.out.println("The new string is: "+t.repeatAllTwice(str1));
+			  }
+	}

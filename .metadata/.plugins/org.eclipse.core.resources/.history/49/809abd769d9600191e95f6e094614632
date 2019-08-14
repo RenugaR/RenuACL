@@ -1,0 +1,10 @@
+package org.simpleforms;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SimpleForms {
+	System.setProperty("webdriver.chrome.driver", "C:\\GreenTech\\SeleniumDay1\\drivers\\ChromeDriver.exe");			
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://www.adactin.com/HotelApp/");
+}
